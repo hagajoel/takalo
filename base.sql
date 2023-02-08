@@ -1,4 +1,4 @@
--- Admin
+
 CREATE TABLE admin (
     email VARCHAR(20),
     pwd VARCHAR(10)
@@ -9,12 +9,20 @@ CREATE TABLE category (
     nom VARCHAR(20)
 );
 
+CREATE TABLE proprietaire(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(20),
+    email VARCHAR(20),
+    pwd VARCHAR(10)
+);
+
 CREATE TABLE objects (
     id INT PRIMARY KEY AUTO_INCREMENT,
     idP INT,
     idC INT,
     nom VARCHAR(20),
     price DOUBLE,
+    description varchar(200),
     FOREIGN KEY (idP) REFERENCES proprietaire(id),
     FOREIGN KEY (idC) REFERENCES category(id)
 );
@@ -24,14 +32,6 @@ CREATE TABLE listImg(
     idO INT,
     dir VARCHAR(20),
     FOREIGN KEY (idO) REFERENCES objects(id)
-);
-
--- Frontoffice
-CREATE TABLE proprietaire(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(20),
-    email VARCHAR(20),
-    pwd VARCHAR(10)
 );
 
 CREATE TABLE proposition(

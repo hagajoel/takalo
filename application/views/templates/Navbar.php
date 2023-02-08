@@ -3,9 +3,9 @@
     <form action="" method="post">
         <input type="text" name="search" class="search-bar input-sm" placeholder="Rechercher">
         <select name="cat" class="select-box">
-            <option value="">Chaussures</option>
-            <option value="">Chaussures</option>
-            <option value="">Chaussures</option>
+            <?php for($i=0 ; $i< sizeof($category) ; $i++) { ?>
+                <option value="<?php echo $category[$i]['id'] ?>"><?php echo $category[$i]['nom'] ?></option>
+            <?php } ?>
         </select>
     </form>
     <ul>

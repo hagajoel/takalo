@@ -7,7 +7,7 @@ $error = $this->session->flashdata('login_error');
 <div class="container">
     <div class="left">
         <div class="bottom">
-                <form action="" method="post">
+                <form action="AddObj/insert" method="post">
                     <p class="title">Ajouter un objet.</p>
                     <div class="input">
                         <p>Nom:</p>
@@ -19,11 +19,10 @@ $error = $this->session->flashdata('login_error');
                     </div>
                     <div class="input">
                         <p>Catégories:</p>
-                        <select name="cat" class="select-box">
-                            <option value="">Chaussure</option>
-                            <option value="">Vêtements</option>
-                            <option value="">Tee-shirt</option>
-                            <option value="">Casquette</option>
+                        <select name="category" class="select-box">
+                            <?php for($i=0 ; $i< sizeof($category) ; $i++) { ?>
+                                <option value=<?php echo $category[$i]['id'] ?>><?php echo $category[$i]['nom'] ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="input">

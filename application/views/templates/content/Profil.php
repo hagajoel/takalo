@@ -5,5 +5,5 @@
         <a href="<?php echo site_url('addObj');?>">Ajouter un objet</a>
     </div>
 <?php 
-    $this->load->view('templates/list');
+    $this->load->view('templates/listMyObject');
 ?>

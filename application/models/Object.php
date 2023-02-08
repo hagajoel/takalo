@@ -41,9 +41,25 @@ class Object extends CI_Model{
           return $result;
      }
      public function insertObject($data){
-          $sql = "INSERT INTO objects (idP,idC,nom,price,description) VALUES (%d,%d,%s,%s,%s)";
-          $sql = sprintf($sql,$this->db->escape($data['idP']),$this->db->escape($data['category']),$this->db->escape($data['nom']),$this->db->escape($data['price']),$this->db->escape($data['desc']));
+          $sql = "INSERT INTO objects (idP,idC,nom,price,description) VALUES (%d,%s,%s,%s,%s)";
+          $sql = sprintf($sql,$this->db->escape($data['idP']),$this->db->escape($data['ca']),$this->db->escape($data['nom']),$this->db->escape($data['price']),$this->db->escape($data['desc']));
           $this->db->query($sql);
+     }
+     public function search($motcle,$idC,$idProp){
+          $sql = "select * from allobjects where ( obj like '%".$motcle."%' or description like '%".$motcle."%' ) and cate in('".$idC."') and idProp !=".$idProp;
+          $data = $this->db->query($sql);
+          $result = array();
+          foreach($data->result_array() as $row){
+               $indice = array(
+                    'propri' => $row['propri'],
+                    'obj' => $row['obj'],
+                    'cate' => $row['cate'],
+                    'price' => $row['price'],
+                    'description' => $row['description']
+               );
+               array_push($result,$indice);
+          }
+          return $result;
      }
 }
 ?>

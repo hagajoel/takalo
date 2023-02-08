@@ -12,13 +12,14 @@
         function insert(){
             $this->load->model('Object');
             $data = array(
-                'idP' => 1,
-                'category' => $this->input->post('category'),
-                'nom' => $this->input->post('nom'),
-                'price' => $this->input->post('price'),
-                'desc' => $this->input->post('desc')
+                'ca' => $this->input->get('category'),
+                'nom' => $this->input->get('nom'),
+                'price' => $this->input->get('price'),
+                'desc' => $this->input->get('desc'),
+                'idP' => 1
             );
             $this->Object->insertObject($data);
+            redirect('ViewProfil');
         }
     }
 ?>

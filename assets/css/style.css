@@ -23,6 +23,8 @@ body {
     font-size: 15px;
     background-color: var(--cream);
     font-family: 'Mabry Pro';
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 .link {
@@ -232,11 +234,11 @@ body {
 }
 
 .card {
+    position: relative;
     background-color: var(--white);
     border: 1px solid black;
     margin: 10px 20px;
-    position: relative;
-    width: 350;
+    width: 350px;
 }
 
 .card .desc {
@@ -256,7 +258,7 @@ body {
 .cat {
     position: absolute;
     right: 20;
-    bottom: 75;
+    bottom: 35;
     padding: 5px 10px;
     border-radius: 10px;
     border: 0.25rem;
@@ -530,3 +532,24 @@ body {
     margin-top: 50px;
     background-color: var(--white);
   }
+
+/* Footer */
+
+html, body {
+    height: 100%;
+}
+
+.footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 500px;
+    color: var(--white);
+    width: 100%;
+    flex-direction: column;
+    flex-shrink: 0;
+}

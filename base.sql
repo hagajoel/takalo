@@ -41,27 +41,17 @@ CREATE TABLE proposition(
     idO2 INT,
     idR INT,
     dateProps DATETIME,
+    valide int default 0,
     FOREIGN KEY (idD) REFERENCES proprietaire(id),
     FOREIGN KEY (idO1) REFERENCES objects(id),
     FOREIGN KEY (idO2) REFERENCES objects(id),
     FOREIGN KEY (idR) REFERENCES proprietaire(id)
 );
 
-CREATE TABLE demande(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    idPr INT,
-    dateAccept DATETIME,
-    FOREIGN KEY (idPr) REFERENCES proposition(id)
-);
-
 CREATE TABLE historic (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    idO INT,
-    idP INT,
-    idD INT,
-    FOREIGN KEY (idO) REFERENCES objects(id),
-    FOREIGN KEY (idP) REFERENCES proprietaire(id),
-    FOREIGN KEY (idD) REFERENCES demande(id)
+    idpropo INT,
+    FOREIGN KEY (idpropo) REFERENCES proposition(id)
 );
 
 CREATE TABLE IF NOT EXISTS `gallery` (

@@ -15,12 +15,12 @@
                     <div class="profil profil-sm">
                         <a href="#">TA</a>
                     </div>
-                    <p class="nom">Paul</p>
-                    <p class="obj">Casquettes</p>
+                    <p class="nom"><?php echo $propsi[$i]['PropR']; ?></p>
+                    <p class="obj"><?php echo $propsi[$i]['object2']; ?></p>
             </div>
-                <p>2022-11-03 15:50:20</p>
-                <a href="#">Accepter</a>
-                <a href="#">Refuser</a>
+                <p><?php echo $propsi[$i]['dateprops']; ?></p>
+                <a href="ViewNotif/acceptPropos?id=<?php echo $propsi[$i]['id']; ?>">Accepter</a>
+                <a href="ViewNotif/deleteProposition?id=<?php echo $propsi[$i]['id']; ?>">Refuser</a>
             </div>
         <?php } ?>
 </div>

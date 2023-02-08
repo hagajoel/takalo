@@ -7,7 +7,7 @@
     <div class="desc">
         <div class="left">
             <div class="profil profil-sm">TA</div>
-            <p>Catégorie(s): <span class="cat-black">Teeshirt</span></p>
+            <p>Catégorie(s): <span class="cat-black">fashion</span></p>
             <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis quos, placeat dolorum laudantium alias mollitia minima, repellendus ut necessitatibus deserunt laboriosam, minus praesentium! Dignissimos nulla cupiditate voluptas impedit sapiente corporis vitae provident eius, dicta amet tenetur non cum, fugiat obcaecati necessitatibus temporibus adipisci eaque! Ex soluta suscipit nulla nobis deleniti!</p>
         </div>
         <div class="right">
